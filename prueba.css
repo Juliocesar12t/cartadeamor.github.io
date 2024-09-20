@@ -1,0 +1,224 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://img.freepik.com/premium-photo/planet-with-large-planet-middle-it_662214-697853.jpg?w=740);
+    position: relative;
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    transition: background-image 0.50s ease-in-out;
+    overflow: hidden; /* Evita el desplazamiento vertical y horizontal */
+    color: #000000; /* Texto blanco para contraste */
+}
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-image: url(https://th.bing.com/th/id/R.69bc483dcaf624a2fee30c611e97750c?rik=97RPzJybtKLh8g&pid=ImgRaw&r=0&sres=1&sresct=1);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+.card, .title-card {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://i.pinimg.com/736x/9f/f9/c4/9ff9c46b7b8979660151fdadc97e132d.jpg);
+    background-color: rgb(255, 255, 255); /* Fondo blanco para las tarjetas */
+    color: #000000;
+    border-radius: 60px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    max-width: 600px; /* Limita el ancho máximo para evitar el desbordamiento */
+    max-height: 80vh; /* Limita la altura máxima para ajustarse a la ventana */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+.title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.button-container, .button-atras {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    content: '❤️'; /* Usa el emoji del corazón, o usa un ícono de tu elección */
+}
+
+button:hover {
+    background-color: #ff4d4d;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button i {
+    align-items: center;
+    text-align: center;
+    color: red;
+}
+
+.card {
+    display: none;
+}
+
+.card h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+.card .title-querida{
+    font-family: 'Dancing Script', cursive;
+            font-size: 24px; /* Tamaño del texto */
+            line-height: 1.6; /* Espaciado entre líneas */
+            color: black; /* Color del texto */
+}
+
+.card p, .card ul {
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: 'Merriweather', serif;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.signature p {
+    margin: 5px 0;
+}
+
+ul {
+    list-style: none; /* Elimina los puntos predeterminados */
+    padding-left: 0; /* Elimina el padding predeterminado */
+}
+
+li {
+    position: relative;
+    padding-left: 40px; /* Espacio para el ícono */
+    margin-bottom: 10px; /* Espacio entre ítems */
+    font-family: 'Bebas Neue', cursive;
+}
+
+li::before {
+    content: '❤️'; /* Emoji por defecto */
+    position: absolute;
+    left: 0;
+    font-size: 1.5em; /* Ajusta el tamaño del corazón */
+    color: red; /* Cambia el color del corazón */
+}
+
+li:nth-child(2)::before {
+    content: '💖'; /* 2 */
+}
+
+li:nth-child(3)::before {
+    content: '💞'; /* 3 */
+}
+
+li:nth-child(4)::before {
+    content: '💗'; /* 4 */
+}
+
+li:nth-child(5)::before {
+    content: '💕'; /* 5 */
+}
+
+li:nth-child(6)::before {
+    content: '💖'; /* 6 */
+}
+
+.button-cards
+{
+    text-align: center;
+    align-items: center;
+    color: red;
+}
+
+
+
+
+
+
+
+        /* Eliminar selección de texto para todos los elementos */
+* {
+user-select: none;
+}
+
+/* Eliminar selección y contorno para enlaces, botones e imágenes */
+a, button{
+user-select: none;
+outline: none;
+}
+
+/* Eliminar el color de fondo al seleccionar texto */
+::selection {
+background: transparent;
+color: inherit;
+}
+
+i{
+color: #ff0000;
+text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+.title-card{
+font-size: 15px;
+}
+.card{
+font-size: 15px;
+}
+body{
+background-position: center;
+background-repeat: no-repeat;
+background-size: 450px;
+background-image: url(https://th.bing.com/th/id/R.69bc483dcaf624a2fee30c611e97750c?rik=97RPzJybtKLh8g&pid=ImgRaw&r=0&sres=1&sresct=1);
+}
+}
+
+@keyframes parpadeo {
+0% {
+box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+}
+50% {
+box-shadow: none;
+}
+100% {
+box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+}
+}

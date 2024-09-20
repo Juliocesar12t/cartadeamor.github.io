@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gupter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prueba.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Cosas que me gustan de mi novia</title>
+    <audio id="click-sound" src="http://www.sonidosmp3gratis.com/sounds/008721857_prev.mp3" preload="auto"></audio>
+    <script>
+        let currentCard = 0;
+        const totalCards = 16; // Cambia esto al número total de tarjetas
+    
+        function showCard(cardNumber) {
+            currentCard = cardNumber;
+            document.getElementById('title-card').style.display = 'none';
+            document.querySelectorAll('.card').forEach(function(card, index) {
+                card.style.display = (index + 1 === cardNumber) ? 'block' : 'none';
+            }); 
+            const currentCardElement = document.getElementById('card' + cardNumber);
+            currentCardElement.scrollTo(0, 0);
+    
+            // Controlar la habilitación/deshabilitación de los botones
+            document.getElementById('backButton').disabled = false;
+            document.getElementById('nextButton').disabled = (currentCard === totalCards);
+        }
+    
+        function goBack() {
+            if (currentCard > 1) {
+                showCard(currentCard - 1);
+            } else {
+                // Si estamos en la primera tarjeta, volver al título
+                document.querySelectorAll('.card').forEach(function(card) {
+                    card.style.display = 'none';
+                });
+                document.getElementById('title-card').style.display = 'block';
+                currentCard = 0;
+            }
+            // Desplazar hacia arriba la tarjeta mostrada
+            const currentCardElement = document.getElementById('card' + currentCard);
+            if (currentCardElement) {
+                currentCardElement.scrollTo(0, 0);
+            }
+        }
+    
+        function goNext() {
+            if (currentCard < totalCards) {
+                showCard(currentCard + 1);
+            }
+        }
+    
+        function goToTitle() {
+            document.querySelectorAll('.card').forEach(function(card) {
+                card.style.display = 'none';
+            });
+            document.getElementById('title-card').style.display = 'block';
+            currentCard = 0;
+        }
+    
+        function playSound() {
+            document.getElementById('click-sound').play();
+        }
+
+        // Función para reproducir el audio
+function playAudio() {
+    const audio = document.getElementById('audioMensaje');
+    audio.play();
+}
+
+// Añadir el evento al botón después de cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const playButton = document.getElementById('playButton');
+    playButton.addEventListener('click', playAudio);
+});
+    </script>
+    
+    
+    
+    
+    
+</head>
+<body>
+    <div id="title-card" class="title-card" style="display: block;"> <!--Primera title-card-->
+        <div class="title">COSAS QUE ME GUSTAN DE MI NOVIA😍</div>
+        <div class="button-container">
+            <button onclick="playSound(); showCard(1)">❤️</button>
+            <button onclick="playSound(); showCard(15)">❤️1 mes</button>
+        </div>
+    </div>
+
+    <!-- Primera Card -->
+    <div class="card1">
+    <div id="card1" class="card">
+        <h1>😍COSAS QUE ME GUSTAN DE TI😍</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+        <p>Hoy quiero tomarme un momento para escribirte y expresarte todo lo que me gusta de ti. Eres una persona increíble, y cada día encuentro nuevas razones para amarte más.</p>
+        <p>Aquí algunas de las muchas cosas que me encantan de ti:</p>
+        <ul>
+            <li>Cómo nuestras conversaciones nocturnas me hacen sentirte cerca, a pesar de la distancia🌙.</li>
+            <li>Cómo me haces sentir querido y apreciado con cada palabra que compartimos, a pesar de los kilómetros entre nosotros✨.</li>
+            <li>Tu inteligencia y la manera en que siempre sabes qué decir, aún cuando estamos lejos🧠.</li>
+            <li>Las noches que pasamos hablando📞.</li>
+            <li>Cómo tus mensajes durante el día siempre logran hacerme sonreír y sentirme cercano a ti💌.</li>
+        </ul>
+        <p>Gracias por estar siempre a mi lado, incluso a distancia. Te amo más de lo que las palabras pueden decir..</p>
+        <div class="signature">
+            <p>Con todo mi amor,</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda Card -->
+    <div class="card2">
+    <div id="card2" class="card">
+        <h1>😍COSAS QUE ME GUSTAN AUN MAS😍</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+        <p>La lista sigue, porque siempre encuentro nuevas cosas que me hacen amarte más cada día.</p>
+        <ul>
+            <li>🎥❤️Los videos de TikTok que me dedicas. Cada uno de ellos me hace sonreír y me recuerda lo especial que eres.</li>
+            <li>💖🌌 La manera en que cada pequeño gesto tuyo tiene un gran impacto en mi corazón, haciendo que cada día sea mejor.</li>
+            <li>🌟Tu pasión por lo que haces.</li>
+            <li>🌹Tu belleza, tanto por dentro como por fuera.</li>
+        </ul>
+        <p>Gracias por ser la persona increíble que eres. Te amo infinitamente.</p>
+        <div class="signature">
+            <p>Con todo mi amor,</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Tercera Card -->
+<div class="card3">
+<div id="card3" class="card">
+    <h1>Siempre en mi Corazón 💌</h1>
+        <div class="button-atras">
+            <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+            <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+        </div>
+    </div>
+</div>
+
+<div id="card3" class="card" style="display: none;">
+    <h1>Siempre en mi Corazón 💌</h1>
+    <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+    <p>La distancia puede hacernos sentir separados, pero quiero que sepas que siempre estás en mi corazón. No 
+    importa cuánto tiempo pase, mi amor por ti sigue creciendo. Cada día, cuento los minutos para verte
+    de nuevo y estar contigo. Hasta entonces,
+    guarda estos pensamientos cerca de ti y recuerda que siempre estás en mis pensamientos.</p>
+    <div class="signature">
+        <p>Con todo mi amor,</p>
+        <p class="title-querida">✨[Stiff]✨</p>
+        <div class="button-atras">
+            <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+            <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+        </div>
+    </div>
+</div>
+
+<!-- 4 Card -->
+<div class="card4">
+    <div id="card4" class="card">
+        <h1>Recuerdos que Atesoro📸</h1>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card4" class="card" style="display: none;">
+        <h1>Recuerdos que Atesoro📸</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+        <p>
+            UFF Recuerdo esos momentos especiales que hemos compartido, aunque sean a 
+            través de mensajes o llamadas. Cada conversación contigo es un tesoro y cada risa compartida, una joya que guardo en mi corazón. La forma
+            en que haces que me sienta amado y comprendido es algo que nunca había experimentado antes.
+        </p>
+            <p>Con todo mi amor,</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+<!-- 5 Card -->
+<div class="card5">
+    <div id="card5" class="card">
+        <h1>TU VOZ, MI COMPAÑIA📞</h1>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card5" class="card" style="display: none;">
+        <h1>TU VOZ ME ENCANTA💌</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+        <p>
+            Tu voz al otro lado del teléfono es lo que me mantiene fuerte. Aunque no puedo 
+            tenerte cerca, cada palabra tuya me envuelve y me hace sentir que estamos más unidos que nunca.
+        </p>
+            <p>Con todo mi amor,</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+<!-- 6 Card -->
+<div class="card6">
+    <div id="card6" class="card">
+        <h1>NUESTRAS CONVERSACIONES NOCTURNAS🌙</h1>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card6" class="card" style="display: none;">
+        <h1>NUESTRAS LLAMADAS MAGICAS📞</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+        <p>
+            Cada noche, cuando nos quedamos hablando hasta tarde, siento que no importa la distancia. Esas horas contigo son mi
+            refugio, donde todo parece perfecto y mi corazón se llena de paz.
+        </p>
+            <p>Con todo mi amor,</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+<!-- 7 Card -->
+<div class="card7">
+    <div id="card7" class="card">
+        <h1>DETALLES QUE ME GUSTAN DE TI🌟</h1>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card7" class="card" style="display: none;">
+        <h1>PEQUEÑOS DETALLES QUE ME ENAMORAN MAS DE TI🌟</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+        <ul>
+            <li>🤗💫La forma en que me entiendes sin palabras: A veces, ni siquiera necesito decir mucho para que sepas lo que estoy
+                sintiendo. Tu capacidad para captar mis emociones me hace sentir comprendido y apoyado.🤗💫</li>
+
+            <li>🌸😊Tus pequeños gestos de cariño: Ya sea un mensaje inesperado, una sonrisa virtual o un simple 
+                "buenos días", esos pequeños gestos hacen que mi día sea mucho mejor.🌸😊</li>
+
+            <li>💖🔒Tu sinceridad y honestidad: Valoro profundamente la forma en que siempre eres honesta
+                conmigo. Esa autenticidad fortalece nuestra conexión y me hace confiar más en ti.💖🔒</li>
+
+            <li>💕🌙Tus gestos de cariño durante las llamadas: Ya sea un gesto amoroso o una palabra
+                reconfortante, esos momentos durante nuestras conversaciones son lo que más valoro.💕🌙</li>
+
+            <li>😊💞Cómo logras hacerme sonreír incluso cuando no estoy cerca de ti. Me has
+                ayudado a descubrir un lado más suave y cariñoso en mí mismo.😊💞</li>
+        </ul>
+            <p>Con todo mi amor,</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">Carta</button>
+            </div>
+        </div>
+    </div>
+
+<!-- 8 Card -->
+<div class="card8">
+    <div id="card8" class="card">
+        <h1>CARTA FINAL💌</h1>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="nextButton" onclick="playSound(); goNext()">💖</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card8" class="card" style="display: none;">
+        <h1>CARTA FINAL💌</h1>
+        <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+    <P>
+        <p>Aunque estamos separados por la distancia, cada conversación nocturna y cada mensaje durante el día refuerza nuestro vínculo. Tus pequeños detalles y dedicaciones me hacen sentir más cerca de ti, a pesar de los kilómetros entre nosotros.</p>
+        <p>Gracias por tu paciencia y amor constante. Cada día contigo, aunque sea a distancia, es un regalo. Estoy ansioso por el futuro y todos los momentos que compartiremos, sin importar la distancia.</p>
+        <p>Te amo más de lo que las palabras pueden expresar.</p>
+    <P>
+            <p>Con todo mi amor,</p>
+            <p>TE AMO💞</p>
+            <p class="title-querida">✨[Stiff]✨</p>
+            <div class="button-atras">
+                <button id="backButton" onclick="playSound(); goBack()">Atrás</button>
+                <button id="backButton" onclick="playSound(); goToTitle()">Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9 Card -->
+    <div class="card9">
+        <div id="card9" class="card">
+            <h1>💌 Para ti, mi morenita hermosa 💖</h1>
+            <p class="title-querida">🪐Querida [Sherlyn]💞,</p>
+            <p>La lista sigue, porque siempre encuentro nuevas cosas que me hacen amarte más cada día.</p>
+
+            <p>Aunque estamos lejos, mi amor por ti sigue tan fuerte como siempre. Cada día que pasa, sueño con el momento en que estemos juntos, y me emociono por todo lo que nos espera. 🌟</p>
+            <p>No te canses, mi amor. Sé que esta relación a distancia no es fácil, pero todo esto vale la pena porque te amo y quiero estar contigo, hoy y siempre. 💕</p>
+            <p>Te prometo que aunque la distancia nos separe ahora, siempre estaré contigo en corazón y pensamiento. 🌍</p>
+            <h2>Te amo con todo mi corazón. ¡Feliz primer mes! 💖</h2>
+
+            <p>Gracias por ser la persona increíble que eres. Te amo infinitamente.</p>
+            <div class="signature">
+                <p>Con todo mi amor,</p>
+                <p class="title-querida">✨[Stiff]✨</p>
+                <div class="button-atras">
+                    <button id="backButton" onclick="playSound(); goToTitle()">Inicio</button>
+                    <button id="nextButton" onclick="playSound(); goNext()">💖</button>
+                    <button id="playButton">🎵 Reproducir Mensaje</button>
+                    <audio id="audioMensaje" src="mensaje.mp3"></audio>
+                </div>
+            </div>
+        </div>
+
+    <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://img.freepik.com/premium-photo/planet-with-large-planet-middle-it_662214-697853.jpg?w=740);
+    position: relative;
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    transition: background-image 0.50s ease-in-out;
+    overflow: hidden; /* Evita el desplazamiento vertical y horizontal */
+    color: #000000; /* Texto blanco para contraste */
+}
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-image: url(https://th.bing.com/th/id/R.69bc483dcaf624a2fee30c611e97750c?rik=97RPzJybtKLh8g&pid=ImgRaw&r=0&sres=1&sresct=1);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+.card, .title-card {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://i.pinimg.com/736x/9f/f9/c4/9ff9c46b7b8979660151fdadc97e132d.jpg);
+    background-color: rgb(255, 255, 255); /* Fondo blanco para las tarjetas */
+    color: #000000;
+    border-radius: 60px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    max-width: 600px; /* Limita el ancho máximo para evitar el desbordamiento */
+    max-height: 80vh; /* Limita la altura máxima para ajustarse a la ventana */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+.title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.button-container, .button-atras {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    content: '❤️'; /* Usa el emoji del corazón, o usa un ícono de tu elección */
+}
+
+button:hover {
+    background-color: #ff4d4d;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button i {
+    align-items: center;
+    text-align: center;
+    color: red;
+}
+
+.card {
+    display: none;
+}
+
+.card h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+.card .title-querida{
+    font-family: 'Dancing Script', cursive;
+            font-size: 24px; /* Tamaño del texto */
+            line-height: 1.6; /* Espaciado entre líneas */
+            color: black; /* Color del texto */
+}
+
+.card p, .card ul {
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: 'Merriweather', serif;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.signature p {
+    margin: 5px 0;
+}
+
+ul {
+    list-style: none; /* Elimina los puntos predeterminados */
+    padding-left: 0; /* Elimina el padding predeterminado */
+}
+
+li {
+    position: relative;
+    padding-left: 40px; /* Espacio para el ícono */
+    margin-bottom: 10px; /* Espacio entre ítems */
+    font-family: 'Bebas Neue', cursive;
+}
+
+li::before {
+    content: '❤️'; /* Emoji por defecto */
+    position: absolute;
+    left: 0;
+    font-size: 1.5em; /* Ajusta el tamaño del corazón */
+    color: red; /* Cambia el color del corazón */
+}
+
+li:nth-child(2)::before {
+    content: '💖'; /* 2 */
+}
+
+li:nth-child(3)::before {
+    content: '💞'; /* 3 */
+}
+
+li:nth-child(4)::before {
+    content: '💗'; /* 4 */
+}
+
+li:nth-child(5)::before {
+    content: '💕'; /* 5 */
+}
+
+li:nth-child(6)::before {
+    content: '💖'; /* 6 */
+}
+
+.button-cards
+{
+    text-align: center;
+    align-items: center;
+    color: red;
+}
+
+
+
+
+
+
+
+        /* Eliminar selección de texto para todos los elementos */
+* {
+user-select: none;
+}
+
+/* Eliminar selección y contorno para enlaces, botones e imágenes */
+a, button{
+user-select: none;
+outline: none;
+}
+
+/* Eliminar el color de fondo al seleccionar texto */
+::selection {
+background: transparent;
+color: inherit;
+}
+
+i{
+color: #ff0000;
+text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+.title-card{
+font-size: 15px;
+}
+.card{
+font-size: 15px;
+}
+body{
+background-position: center;
+background-repeat: no-repeat;
+background-size: 450px;
+background-image: url(https://th.bing.com/th/id/R.69bc483dcaf624a2fee30c611e97750c?rik=97RPzJybtKLh8g&pid=ImgRaw&r=0&sres=1&sresct=1);
+}
+}
+
+@keyframes parpadeo {
+0% {
+box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+}
+50% {
+box-shadow: none;
+}
+100% {
+box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+}
+}
+    </style>
+</body>
+</html>
